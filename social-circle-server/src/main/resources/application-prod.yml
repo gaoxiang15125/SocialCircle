@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://zhouziran.cn:3307/data?characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: Zh1994zh
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource

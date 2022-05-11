@@ -1,0 +1,38 @@
+server:
+  port: 50881
+  servlet:
+    context-path: /socialcircle
+
+# 数据库相关配置
+spring:
+  profiles:
+    active: dev
+    include: weixin,socialcircle
+
+#mybatisplus配置
+mybatis:
+  table:
+    auto: create # update
+  model:
+    pack: github.zlg.socialcircle.module.entity
+  database:
+    type: mysql
+
+
+#mybatis-plus:
+#  mapper-locations: classpath*:/mapper/**/*.xml,classpath*:xxxxxx/*.xml,classpath*:com/gitee/sunchenbin/mybatis/actable/mapping/*/*.xml
+
+#Swagger2 配置信息
+swagger2:
+  name: zlg
+  url: https://gitee.com/zhou-lianggao/social-circle-project/settings
+  email: 630268696@qq.com
+  package-url: github.zlg.socialcircle.server.controller
+  title: 交友圈圈接口文档
+  description: 先行版本圈圈 api 文档
+  version: 1.0.0
+
+# 日志配置信息
+#logging:
+#  level:
+#    org.springframework.boot.autoconfigure: ERROR

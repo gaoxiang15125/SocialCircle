@@ -1,0 +1,6 @@
+# app 内相关设置参数
+SocialCircle:
+    Socialmodule:
+      numLimit: 4 # 圈子包含的模块上限
+    NoticeMessage:
+      timeOutLimit: 300 # 单位 秒

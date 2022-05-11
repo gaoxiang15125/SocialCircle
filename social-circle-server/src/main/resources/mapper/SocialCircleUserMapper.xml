@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="github.zlg.socialcircle.module.mapper.socialcircle.SocialCircleUserMapper">
+
+    <select id="getUserJoinSocialCircleByPage" resultType="github.zlg.socialcircle.module.entity.circlerelease.SocialCircleUser">
+        SELECT * FROM social_circle_user WHERE user_id = #{userUUID} and member_type &lt;= #{memberType} ORDER BY creat_time LIMIT #{start}, #{contentNum}
+    </select>
+
+    <select id="getUserManagerSocialCircleByPage" resultType="github.zlg.socialcircle.module.entity.circlerelease.SocialCircleUser">
+        SELECT * FROM social_circle_user WHERE user_id = #{userUUID} and member_type = #{memberType} ORDER BY creat_time LIMIT #{start}, #{contentNum}
+    </select>
+
+</mapper>

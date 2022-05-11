@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="github.zlg.socialcircle.module.mapper.message.CommentMapper">
+    <!--  对于评论，数量  -->
+    <!--  按时间顺序从大到小排序  -->
+<!--    <select id="getCo" resultType="github.zlg.socialcircle.module.entity.content.ModuleContent">-->
+<!--        SELECT * FROM module_content WHERE moduleId = #{moduleId} ORDER BY creat_time DESC LIMIT #{start}, #{contentNum}-->
+<!--    </select>-->
+
+<!--    <select id="getContentOrderByTimeASCWithModuleId" resultType="github.zlg.socialcircle.module.entity.content.ModuleContent">-->
+<!--        SELECT * FROM module_content WHERE moduleId = #{moduleId}, ORDER BY creat_time ASC LIMIT #{start}, #{contentNum}-->
+<!--    </select>-->
+
+</mapper>

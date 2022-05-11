@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="github.zlg.socialcircle.module.mapper.socialcircle.SocialCircleMapper">
+
+    <!-- 自己手动使用物理方式进行分页 -->
+    <select id="getDistanceSocialCircleByPage" resultType="github.zlg.socialcircle.module.entity.circlerelease.SocialCircle">
+        SELECT *, ST_Distance_Sphere(POINT(#{longitude}, #{latitude}), POINT(longitude, latitude)) AS distant FROM social_circle WHERE ST_Distance_Sphere(POINT(#{longitude}, #{latitude}), POINT(longitude, latitude)) &lt; #{range} ORDER BY distant LIMIT #{start}, #{contentNum};
+    </select>
+
+    <select id="getDistanceSocialCircleNum" resultType="int">
+        SELECT count(*) FROM social_circle WHERE ST_Distance_Sphere(POINT(#{longitude}, #{latitude}), POINT(longitude, latitude)) &lt; #{range};
+    </select>
+
+    <!-- 将来引入了 redis 就改为逻辑分页，吊的飞起 -->
+    <select id="getAllSocialCircleByPage" resultType="github.zlg.socialcircle.module.entity.circlerelease.SocialCircle">
+        SELECT * FROM social_circle ORDER BY creat_time DESC LIMIT #{start}, #{contentNum};
+    </select>
+
+    <select id="getAllSocialCircleNum" resultType="int">
+        SELECT count(*) FROM social_circle;
+    </select>
+
+
+
+</mapper>
